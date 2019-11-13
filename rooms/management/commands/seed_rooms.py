@@ -8,11 +8,11 @@ from users import models as user_models
 
 class Command(BaseCommand):
 
-    help = "This command creates rooms"
+    help = "This command creates many users"
 
     def add_arguments(self, parser):
         parser.add_argument(
-            "--number", default=2, type=int, help="How many rooms you want to create"
+            "--number", default=2, type=int, help="How many users do you want to create"
         )
 
     def handle(self, *args, **options):
@@ -27,7 +27,7 @@ class Command(BaseCommand):
                 "name": lambda x: seeder.faker.address(),
                 "host": lambda x: random.choice(all_users),
                 "room_type": lambda x: random.choice(room_types),
-                "guests": lambda x: random.randint(1, 20),
+                "guests": lambda x: random.randint(1, 19),
                 "price": lambda x: random.randint(1, 300),
                 "beds": lambda x: random.randint(1, 5),
                 "bedrooms": lambda x: random.randint(1, 5),
@@ -39,13 +39,14 @@ class Command(BaseCommand):
         amenities = room_models.Amenity.objects.all()
         facilities = room_models.Facility.objects.all()
         rules = room_models.HouseRule.objects.all()
+
         for pk in created_clean:
             room = room_models.Room.objects.get(pk=pk)
             for i in range(3, random.randint(10, 30)):
                 room_models.Photo.objects.create(
                     caption=seeder.faker.sentence(),
                     room=room,
-                    file=f"room_photos/{random.randint(1, 31)}.webp",
+                    file=f"room_photos/{random.randint(1,31)}.webp",
                 )
             for a in amenities:
                 magic_number = random.randint(0, 15)
