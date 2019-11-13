@@ -126,5 +126,5 @@ dmypy.json
 
 # Mac
 .DS_Store
-# uploads/
-# photos_seed.zip
+uploads/
+photos_seed.zip
