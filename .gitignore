@@ -128,3 +128,4 @@ dmypy.json
 .DS_Store
 uploads/
 photos_seed.zip
+node_modules/
