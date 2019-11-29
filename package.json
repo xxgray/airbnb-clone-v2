@@ -1,7 +1,7 @@
 {
   "name": "airbnb-clone-v2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cloning Airbnb with Python, Django, Tailwind and more...",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xxgray/airbnb-clone-V2.git"
@@ -11,6 +11,7 @@
   },
   "homepage": "https://github.com/xxgray/airbnb-clone-V2#readme",
   "devDependencies": {
+    "autoprefixer": "^9.7.0",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
     "gulp-postcss": "^8.0.0",
